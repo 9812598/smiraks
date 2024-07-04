@@ -18,12 +18,12 @@ export default function MainCarousel() {
         {CarouselBGPics.map((item, index) => (
           <CarouselItem key={index}>
             <div className="p-1 ">
-              <Card>
+              <Card className="border rounded-lg   shadow-sm">
                 <CardContent
-                  className="flex  items-center justify-center p-6 h-[340px]"
+                  className="flex  items-center justify-center p-6 h-[340px] backdrop-opacity-10"
                   style={{ backgroundImage: `url(${item})` }}
                 >
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                  <span className="text-4xl font-semibold"></span>
                 </CardContent>
               </Card>
             </div>
