@@ -10,7 +10,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col justify-between items-end gap-8 w-full">
           <span>г. Нвосибирск, Богдана Хмельницкого, 71</span>
-          <span>smiraks756@gmail.com</span>
+          <a href="mailto:smiraks756@gmail.com">smiraks756@gmail.com</a>
         </div>
       </div>
     </div>

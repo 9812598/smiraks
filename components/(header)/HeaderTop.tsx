@@ -20,7 +20,7 @@ export default function TopHeader() {
           <span>+ 7 (800) 770-09-27</span>
         </div>
         <div className="">
-          <span>smiraks756@gmail.com</span>
+          <a href="mailto:smiraks756@gmail.com">smiraks756@gmail.com</a>
         </div>
       </div>
     </div>
