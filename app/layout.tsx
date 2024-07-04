@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/(header)/Header";
+import Footer from "@/components/(footer)/Footer";
 
 import { cn } from "@/lib/utils";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const jost = Jost({ subsets: ["cyrillic"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-  title: "Siraks - надежный поставщик запчастей для мясной промышленности",
+  title: "Smiraks - надежный поставщик запчастей для мясной промышленности",
   description:
     "Запчасти напрямую из Европы. Отличные цены, быстрая доставка. Ведущие бренды",
 };
@@ -25,11 +24,12 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          `min-h-svh antialiased bg-[hsl(var(--white))] text-[hsl(var(--blue))] ${jost.className} flex flex-col justify-between items-center`
         )}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

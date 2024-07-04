@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    // try to add auto imports
+    "baseUrl": "./",
+    "checkJs": true,
+    // try to add auto imports
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
