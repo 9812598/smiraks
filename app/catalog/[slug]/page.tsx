@@ -9,8 +9,8 @@ export default function page() {
       <h1 className="mt-20">REX-Technologie</h1>
       <div className="flex justify-between items-center w-full">
         <p className="basis-2/3">
-          Компания “СМИРАКС" поставляет оригинальный волчковый инструмент ,
-          производства компании LUMBEC&WALTZ Germany и компании ZICO. Germany
+          Компания "СМИРАКС" поставляет оригинальный волчковый инструмент ,
+          производства компании LUMBEC&WALTZ Germany и компании ZICO. Germany
         </p>
         <div className="flex flex-col items-center justify-center gap-5 basis-1/3">
           <Image
