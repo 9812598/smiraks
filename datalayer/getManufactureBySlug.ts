@@ -25,7 +25,7 @@ export default async function getManufactureBySlug({ slugName }: any) {
 
   const res = await axios.get(`${apiUrl}/manufacturers?${query}`);
 
-  // console.log(`${apiUrl}psychologists?${query}`);
+  // console.log(`${apiUrl}/manufacturers?${query}`);
 
   return res?.data?.data[0]?.attributes;
 }
