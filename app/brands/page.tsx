@@ -1,14 +1,12 @@
 ﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import { useSearchParams } from "next/navigation";
 
 import CatalogPagination from "@/components/CatalogPagination";
 import getAllManufactures from "@/datalayer/getAllManufactures";
 const baseUrl = process.env.STRAPI_BASE_URL;
 
 type Props = {
-  page?: number;
   searchParams: Record<string, string>;
 };
 
@@ -16,6 +14,7 @@ export default async function Page({ searchParams }: Props) {
   const { page } = searchParams;
 
   console.log(page, "params");
+  console.log(typeof page, "typeof");
 
   const { data, meta } = await getAllManufactures(page);
   // console.log(data[0].attributes, "data");

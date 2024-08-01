@@ -2,7 +2,6 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -27,14 +26,11 @@ export default function CatalogPagination({ meta }: any) {
         <PaginationItem>
           <PaginationLink href="#">{meta.pagination.page}</PaginationLink>
         </PaginationItem>
-        {/* <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem> */}
+
         <PaginationItem aria-disabled={true}>
           <PaginationNext
             href={`?page=${currentPage + 1}`}
             className={currentPage < totalPages ? "" : "hidden"}
-            // isActive={currentPage < totalPages}
           />
         </PaginationItem>
       </PaginationContent>

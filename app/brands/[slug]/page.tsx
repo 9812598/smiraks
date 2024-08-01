@@ -8,7 +8,7 @@ const basUrl = process.env.STRAPI_BASE_URL;
 
 type Props = {
   params: {
-    slug: string;
+    slug: number | string;
   };
 };
 

@@ -2,11 +2,11 @@
 import qs from "qs";
 const apiUrl = process.env.STRAPI_API_BASE_URL;
 
-interface Props {
-  pageCount?: number;
-}
+// interface Props {
+//   pageCount?: string;
+// }
 
-export default async function getAllManufactures(pageCount?: Props) {
+export default async function getAllManufactures(pageCount?: string) {
   const query = qs.stringify({
     fields: ["title", "slogan", "slug"],
     populate: {
