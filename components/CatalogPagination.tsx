@@ -12,14 +12,13 @@ export default function CatalogPagination({ meta }: any) {
   const currentPage = meta.pagination.page;
   const totalPages = meta.pagination.pageCount;
 
-  console.log(meta, "meta");
   return (
     <Pagination className="mb-28">
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious
             href={`?page=${currentPage - 1}`}
-            isActive={currentPage > 1}
+            isActive={false}
             className={currentPage > 1 ? "" : "hidden"}
           />
         </PaginationItem>
@@ -27,10 +26,11 @@ export default function CatalogPagination({ meta }: any) {
           <PaginationLink href="#">{meta.pagination.page}</PaginationLink>
         </PaginationItem>
 
-        <PaginationItem aria-disabled={true}>
+        <PaginationItem>
           <PaginationNext
             href={`?page=${currentPage + 1}`}
             className={currentPage < totalPages ? "" : "hidden"}
+            isActive={false}
           />
         </PaginationItem>
       </PaginationContent>

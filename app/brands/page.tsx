@@ -13,12 +13,8 @@ type Props = {
 export default async function Page({ searchParams }: Props) {
   const { page } = searchParams;
 
-  console.log(page, "params");
-  console.log(typeof page, "typeof");
-
   const { data, meta } = await getAllManufactures(page);
   // console.log(data[0].attributes, "data");
-
   return (
     <div className="flex flex-col justify-between items-center gap-44">
       <h1 className="mt-20">Производители</h1>
