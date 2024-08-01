@@ -6,7 +6,7 @@ interface Props {
   pageCount?: number;
 }
 
-export default async function getAllManufactures(pageCount: Props) {
+export default async function getAllManufactures(pageCount?: Props) {
   const query = qs.stringify({
     fields: ["title", "slogan", "slug"],
     populate: {
@@ -25,7 +25,7 @@ export default async function getAllManufactures(pageCount: Props) {
 
   const res = await axios.get(`${apiUrl}/manufacturers?${query}`);
 
-  console.log(`${apiUrl}/manufacturers?${query}`);
+  // console.log(`${apiUrl}/manufacturers?${query}`);
 
   return res?.data;
 }

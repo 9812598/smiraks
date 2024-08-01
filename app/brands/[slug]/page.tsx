@@ -21,14 +21,6 @@ export default async function Page({ params: { slug } }: Props) {
     return <div>Not found data for this brand</div>;
   }
 
-  // data.textAndPics.forEach((item: any) => {
-  //   if (item.type === "list") {
-  //     item.children.forEach((i: any) => {
-  //       console.log(i, "manufacturerData");
-  //     });
-  //   }
-  // });
-
   return (
     <div className="flex flex-col justify-between items-start gap-12 max-w-[var(--max-width)] w-full">
       <h1 className="mt-20">{data.title}</h1>

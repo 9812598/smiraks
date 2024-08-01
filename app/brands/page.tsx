@@ -8,8 +8,8 @@ const baseUrl = process.env.STRAPI_BASE_URL;
 
 export default async function page() {
   const { data, meta } = await getAllManufactures();
-  console.log(data[0].attributes, "data");
-  console.log(meta, "meta");
+  // console.log(data[0].attributes, "data");
+  // console.log(meta, "meta");
 
   return (
     <div className="flex flex-col justify-between items-center gap-44">

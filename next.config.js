@@ -1,5 +1,6 @@
 ﻿// @ts-check
 
+// @ts-ignore
 module.exports = async (phase, { defaultConfig }) => {
   /**
    * @type {import('next').NextConfig}
