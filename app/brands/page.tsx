@@ -1,15 +1,24 @@
 ﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+// import { useSearchParams } from "next/navigation";
 
 import CatalogPagination from "@/components/CatalogPagination";
 import getAllManufactures from "@/datalayer/getAllManufactures";
 const baseUrl = process.env.STRAPI_BASE_URL;
 
-export default async function page() {
-  const { data, meta } = await getAllManufactures();
+type Props = {
+  page?: number;
+  searchParams: Record<string, string>;
+};
+
+export default async function Page({ searchParams }: Props) {
+  const { page } = searchParams;
+
+  console.log(page, "params");
+
+  const { data, meta } = await getAllManufactures(page);
   // console.log(data[0].attributes, "data");
-  // console.log(meta, "meta");
 
   return (
     <div className="flex flex-col justify-between items-center gap-44">
@@ -19,13 +28,15 @@ export default async function page() {
           <Link key={index} href={`/brands/${item?.attributes?.slug}`}>
             <div
               key={index}
-              className="flex flex-col justify-between items-center gap-14 bg-[hsl(var(--main))] drop-shadow-md px-8 py-14 hover:bg-[hsl(var(--main))]/90 max-w-[300px] h-96"
+              className="flex flex-col justify-between items-center gap-8
+               bg-[hsl(var(--main))] drop-shadow-md px-7 py-14 hover:bg-[hsl(var(--main))]/90 max-w-[300px] h-96"
             >
               <Image
                 src={`${baseUrl}${item?.attributes?.logo?.data?.attributes?.url}`}
                 alt={item?.attributes?.logo?.data?.attributes?.alternativeText}
                 width={194}
                 height={48}
+                className="max-h-[100px]"
               />
               <h4>{item?.attributes?.title}</h4>
               <p>{item?.attributes?.slogan}</p>
@@ -33,7 +44,7 @@ export default async function page() {
           </Link>
         ))}
       </div>
-      <CatalogPagination />
+      <CatalogPagination meta={meta} />
     </div>
   );
 }

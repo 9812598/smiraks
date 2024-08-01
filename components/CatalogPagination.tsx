@@ -9,21 +9,33 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-export default function CatalogPagination() {
+export default function CatalogPagination({ meta }: any) {
+  const currentPage = meta.pagination.page;
+  const totalPages = meta.pagination.pageCount;
+
+  console.log(meta, "meta");
   return (
     <Pagination className="mb-28">
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href="#" />
+          <PaginationPrevious
+            href={`?page=${currentPage - 1}`}
+            isActive={currentPage > 1}
+            className={currentPage > 1 ? "" : "hidden"}
+          />
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
+          <PaginationLink href="#">{meta.pagination.page}</PaginationLink>
         </PaginationItem>
-        <PaginationItem>
+        {/* <PaginationItem>
           <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href="#" />
+        </PaginationItem> */}
+        <PaginationItem aria-disabled={true}>
+          <PaginationNext
+            href={`?page=${currentPage + 1}`}
+            className={currentPage < totalPages ? "" : "hidden"}
+            // isActive={currentPage < totalPages}
+          />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
