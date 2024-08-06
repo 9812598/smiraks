@@ -60,10 +60,9 @@ export default function DialogBtn({ text, className }: Props) {
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
     setIsSend(true);
-    fetch("/api/send", {
+    await fetch("/api/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
