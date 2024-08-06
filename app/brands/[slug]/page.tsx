@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import getManufactureBySlug from "../../../datalayer/getManufactureBySlug";
 import WysiWyg from "@/components/WysiWyg";
+import DialogBtn from "@/components/DialogBtn";
 
 const basUrl = process.env.STRAPI_BASE_URL;
 
@@ -36,9 +37,7 @@ export default async function Page({ params: { slug } }: Props) {
 
       <WysiWyg data={data.textAndPics} />
 
-      <Button className="mb-44 mt-24 self-center">
-        Связаться для просчета
-      </Button>
+      <DialogBtn text="Связаться для просчета" className="mb-16 self-center" />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Main2Carousel from "@/components/(main)/Main2Carousel";
 import MainSlogan from "@/components/(main)/MainSlogan";
 import { Button } from "@/components/ui/button";
 import Lottie from "@/components/(main)/Lottie";
+import DialogBtn from "@/components/DialogBtn";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <MainSlogan />
       <Lottie />
       <Main2Carousel />
-      <Button className="mb-44">Связаться для просчета</Button>
+      <DialogBtn text="Связаться для просчета" className="mb-44" />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 ﻿import { Button } from "@/components/ui/button";
 import React from "react";
 import Image from "next/image";
+import DialogBtn from "@/components/DialogBtn";
 
 const dataCatalog = [
   {
@@ -49,7 +50,7 @@ export default function page() {
           </div>
         ))}
       </div>
-      <Button className="mb-44">Связаться для просчета</Button>
+      <DialogBtn text="Связаться для просчета" className="mb-44" />
     </div>
   );
 }
